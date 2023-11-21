@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//Inherits from UITextField
 class BindingTextField: UITextField {
     
     var textChanged: (String) -> Void = { _ in }
@@ -23,6 +24,7 @@ class BindingTextField: UITextField {
     }
     
     private func commonInit() {
+        //Attach editing change whenever anything it typed in the text field
         addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
     }
     
@@ -30,13 +32,9 @@ class BindingTextField: UITextField {
         textChanged = callback
     }
     
-    
     @objc func textFieldDidChanged(_ textField: UITextField) {
-        
         if let text = textField.text {
             textChanged(text)
         }
-        
     }
-    
 }
