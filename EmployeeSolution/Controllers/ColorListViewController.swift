@@ -47,9 +47,13 @@ class ColorListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let viewModel = self.colorListViewModel.colorDataViewModel(at: indexPath.row)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ColorTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ColorTableViewCell", for: indexPath) as? ColorTableViewCell else {
+            fatalError("ColorTableViewCell not found")
+        }
         
-        cell.textLabel?.text = viewModel.colorName
+        cell.colorNameLabel?.text = viewModel.colorName
+        cell.colorCodeView.backgroundColor = UIColor(hex: viewModel.colorCode)
+        cell.colorCodeView.layer.cornerRadius = 15
         
         return cell
     }

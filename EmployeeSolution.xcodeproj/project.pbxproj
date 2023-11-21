@@ -31,6 +31,12 @@
 		E1C9B4962B0CA198002564C2 /* PersonalDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4952B0CA198002564C2 /* PersonalDetailsModel.swift */; };
 		E1C9B49A2B0CA1C7002564C2 /* AdditionalInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4992B0CA1C7002564C2 /* AdditionalInformationModel.swift */; };
 		E1C9B4A52B0CB24A002564C2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4A42B0CB24A002564C2 /* Validation.swift */; };
+		E1C9B4A82B0CC9B8002564C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4A72B0CC9B8002564C2 /* Gender.swift */; };
+		E1C9B4AA2B0CD5A6002564C2 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4A92B0CD5A6002564C2 /* EmployeeTableViewCell.swift */; };
+		E1C9B4AC2B0CD5C9002564C2 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4AB2B0CD5C9002564C2 /* ColorTableViewCell.swift */; };
+		E1C9B4AE2B0CE18A002564C2 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4AD2B0CE18A002564C2 /* CircleView.swift */; };
+		E1C9B4B42B0CF0D0002564C2 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4B32B0CF0D0002564C2 /* UIImage.swift */; };
+		E1C9B4B62B0CF37C002564C2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4B52B0CF37B002564C2 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +66,12 @@
 		E1C9B4952B0CA198002564C2 /* PersonalDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsModel.swift; sourceTree = "<group>"; };
 		E1C9B4992B0CA1C7002564C2 /* AdditionalInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInformationModel.swift; sourceTree = "<group>"; };
 		E1C9B4A42B0CB24A002564C2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		E1C9B4A72B0CC9B8002564C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		E1C9B4A92B0CD5A6002564C2 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		E1C9B4AB2B0CD5C9002564C2 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		E1C9B4AD2B0CE18A002564C2 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		E1C9B4B32B0CF0D0002564C2 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		E1C9B4B52B0CF37B002564C2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,8 @@
 		E1AE7C372B0B7A9E00A36B37 /* EmployeeSolution */ = {
 			isa = PBXGroup;
 			children = (
+				E1C9B4B22B0CF0B0002564C2 /* Extensions */,
+				E1C9B4A62B0CC953002564C2 /* Enums */,
 				E1C9B4A12B0CB192002564C2 /* Helpers */,
 				E1AE7C4D2B0B7B4D00A36B37 /* Services */,
 				E1AE7C4F2B0B7B8100A36B37 /* Models */,
@@ -153,6 +167,8 @@
 		E1AE7C502B0B7BAC00A36B37 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E1C9B4A92B0CD5A6002564C2 /* EmployeeTableViewCell.swift */,
+				E1C9B4AB2B0CD5C9002564C2 /* ColorTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -161,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				E1AE7C522B0B814500A36B37 /* BindingTextField.swift */,
+				E1C9B4AD2B0CE18A002564C2 /* CircleView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -191,6 +208,23 @@
 				E1C9B4A42B0CB24A002564C2 /* Validation.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E1C9B4A62B0CC953002564C2 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				E1C9B4A72B0CC9B8002564C2 /* Gender.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		E1C9B4B22B0CF0B0002564C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1C9B4B32B0CF0D0002564C2 /* UIImage.swift */,
+				E1C9B4B52B0CF37B002564C2 /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,19 +303,25 @@
 				E1C9B4A52B0CB24A002564C2 /* Validation.swift in Sources */,
 				E1C9B4942B0C83D2002564C2 /* ColorListViewModel.swift in Sources */,
 				E1C9B48E2B0C8334002564C2 /* ColorListViewController.swift in Sources */,
+				E1C9B4AC2B0CD5C9002564C2 /* ColorTableViewCell.swift in Sources */,
 				E1C9B49A2B0CA1C7002564C2 /* AdditionalInformationModel.swift in Sources */,
 				E1C9B47E2B0C7F7A002564C2 /* EmployeeResponseModel.swift in Sources */,
 				E1C9B4822B0C7FD2002564C2 /* LoginResponseModel.swift in Sources */,
 				E1AE7C532B0B814500A36B37 /* BindingTextField.swift in Sources */,
 				E1C9B48C2B0C8317002564C2 /* EmployeeListViewController.swift in Sources */,
+				E1C9B4B42B0CF0D0002564C2 /* UIImage.swift in Sources */,
 				E1AE7C392B0B7A9E00A36B37 /* AppDelegate.swift in Sources */,
 				E1AE7C552B0B81C400A36B37 /* LoginViewModel.swift in Sources */,
+				E1C9B4A82B0CC9B8002564C2 /* Gender.swift in Sources */,
+				E1C9B4AA2B0CD5A6002564C2 /* EmployeeTableViewCell.swift in Sources */,
 				E1C9B4882B0C81D2002564C2 /* ColorListResponseModel.swift in Sources */,
 				E1C9B4962B0CA198002564C2 /* PersonalDetailsModel.swift in Sources */,
 				E1C9B4902B0C839B002564C2 /* EmployeeViewModel.swift in Sources */,
 				E1C9B4802B0C7F9B002564C2 /* EmployeeRequestModel.swift in Sources */,
 				E1AE7C3B2B0B7A9E00A36B37 /* SceneDelegate.swift in Sources */,
 				E1C9B4862B0C81B9002564C2 /* EmployeeListResponseModel.swift in Sources */,
+				E1C9B4B62B0CF37C002564C2 /* UIColor.swift in Sources */,
+				E1C9B4AE2B0CE18A002564C2 /* CircleView.swift in Sources */,
 				E1C9B48A2B0C82FB002564C2 /* EmployeeViewController.swift in Sources */,
 				E1C9B4922B0C83B0002564C2 /* EmployeeListViewModel.swift in Sources */,
 				E1C9B4842B0C7FE6002564C2 /* LoginRequestModel.swift in Sources */,

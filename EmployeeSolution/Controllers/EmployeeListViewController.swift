@@ -47,11 +47,13 @@ class EmployeeListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let viewModel = self.employeeListViewModel.employeeDataViewModel(at: indexPath.row)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell", for: indexPath) as? EmployeeTableViewCell else {
+            fatalError("EmployeeTableViewCell not found")
+        }
         
-        cell.textLabel?.text = viewModel.fullName
-        cell.detailTextLabel?.text = viewModel.email
-        
+        cell.fullNameLabel?.text = viewModel.fullName
+        cell.emailLabel?.text = viewModel.email
+        cell.avatarImageView.image = UIImage(url: URL(string: viewModel.avatar))
         return cell
     }
 }

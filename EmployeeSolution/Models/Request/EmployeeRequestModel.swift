@@ -12,9 +12,3 @@ struct EmployeeRequestModel: Codable {
     let personalDetails: PersonalDetailsModel
     let additionalInformation: AdditionalInformationModel
 }
-
-enum Gender: String, Codable {
-    case Male
-    case Female
-    case Other
-}
