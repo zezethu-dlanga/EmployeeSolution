@@ -10,6 +10,8 @@ import UIKit
 
 class EmployeeListViewController: UITableViewController {
     
+    var employeeListViewModel = EmployeeListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,13 +25,33 @@ class EmployeeListViewController: UITableViewController {
         
         let resource = Resource<EmployeeListResponseModel>(url: url)
         
-        Webservice().load(resource: resource) { result in
+        Webservice().load(resource: resource) { [weak self] result in
             switch result {
                 case .success(let employees):
-                    print(employees)
+                    self?.employeeListViewModel.employeeListViewModel = employees.data.map(EmployeeDataViewModel.init)
+                    self?.tableView.reloadData()
                 case .failure(let error):
                     print(error)
             }
         }
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.employeeListViewModel.employeeListViewModel.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let viewModel = self.employeeListViewModel.employeeDataViewModel(at: indexPath.row)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell", for: indexPath)
+        
+        cell.textLabel?.text = viewModel.fullName
+        cell.detailTextLabel?.text = viewModel.email
+        
+        return cell
     }
 }

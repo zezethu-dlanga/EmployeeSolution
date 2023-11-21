@@ -10,6 +10,8 @@ import UIKit
 
 class ColorListViewController: UITableViewController {
     
+    var colorListViewModel = ColorListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,13 +25,32 @@ class ColorListViewController: UITableViewController {
         
         let resource = Resource<ColorListResponseModel>(url: url)
         
-        Webservice().load(resource: resource) { result in
+        Webservice().load(resource: resource) { [weak self] result in
             switch result {
-                case .success(let employees):
-                    print(employees)
+                case .success(let colors):
+                    self?.colorListViewModel.colorListViewModel = colors.data.map(ColorDataViewModel.init)
+                    self?.tableView.reloadData()
                 case .failure(let error):
                     print(error)
             }
         }
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.colorListViewModel.colorListViewModel.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let viewModel = self.colorListViewModel.colorDataViewModel(at: indexPath.row)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ColorTableViewCell", for: indexPath)
+        
+        cell.textLabel?.text = viewModel.colorName
+        
+        return cell
     }
 }
