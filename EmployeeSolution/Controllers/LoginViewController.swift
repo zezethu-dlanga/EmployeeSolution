@@ -9,6 +9,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton! {
+        didSet {
+            loginButton.backgroundColor = UIColor.lightGray
+        }
+    }
+    
     //MARK: - Variables
     private var loginViewModel = LoginViewModel()
     
@@ -25,19 +31,17 @@ class LoginViewController: UIViewController {
         //initialising UI elements
         let emailTextField = BindingTextField() //BindingTextField is a custom view that support binding
         let passwordTextField = BindingTextField()
-        let loginButton = UIButton()
       
         //Creating emal text field
         emailTextField.placeholder = "Enter email"
         emailTextField.borderStyle = .line
         emailTextField.bind { [weak self] text in
             if Validation.isValidEmailAddress(text) {
-                loginButton.backgroundColor = UIColor.blue
+                self?.loginButton.backgroundColor = UIColor.blue
             } else {
-                loginButton.backgroundColor = UIColor.lightGray
+                self?.loginButton.backgroundColor = UIColor.lightGray
             }
-            loginButton.isEnabled = Validation.isValidEmailAddress(text)
-            
+            //self?.loginButton.isEnabled = Validation.isValidEmailAddress(text)
             self?.loginViewModel.email = text
         }
         
@@ -49,11 +53,6 @@ class LoginViewController: UIViewController {
         passwordTextField.bind { [weak self] text in
             self?.loginViewModel.password = text
         }
-                
-        //Creating login button
-        loginButton.setTitle("Login", for: .normal)
-        loginButton.backgroundColor = UIColor.lightGray
-        loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
         
         //Control to add elements on the screen
         let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, loginButton])
@@ -70,9 +69,8 @@ class LoginViewController: UIViewController {
         
     }
     
-    //MARK: - Helper methods
-    //Function called when a button is clicked
-    @objc func login() {
+    //MARK: - Action
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
         print(loginViewModel.email)
         print(loginViewModel.password)
     }

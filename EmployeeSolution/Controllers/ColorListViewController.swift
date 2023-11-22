@@ -53,7 +53,6 @@ class ColorListViewController: UITableViewController {
         
         cell.colorNameLabel?.text = viewModel.colorName
         cell.colorCodeView.backgroundColor = UIColor(hex: viewModel.colorCode)
-        cell.colorCodeView.layer.cornerRadius = 15
         
         return cell
     }

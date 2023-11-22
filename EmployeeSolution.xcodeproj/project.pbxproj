@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E144A3572B0D5FE5001BF181 /* AdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A3562B0D5FE4001BF181 /* AdditionalInfoViewController.swift */; };
+		E144A3592B0D696A001BF181 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A3582B0D6969001BF181 /* Observable.swift */; };
+		E144A35D2B0D87F0001BF181 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A35C2B0D87F0001BF181 /* ReviewViewController.swift */; };
+		E144A35F2B0D8914001BF181 /* SuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A35E2B0D8914001BF181 /* SuccessfulViewController.swift */; };
 		E1AE7C392B0B7A9E00A36B37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7C382B0B7A9E00A36B37 /* AppDelegate.swift */; };
 		E1AE7C3B2B0B7A9E00A36B37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7C3A2B0B7A9E00A36B37 /* SceneDelegate.swift */; };
 		E1AE7C3D2B0B7A9E00A36B37 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7C3C2B0B7A9E00A36B37 /* LoginViewController.swift */; };
@@ -34,12 +38,16 @@
 		E1C9B4A82B0CC9B8002564C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4A72B0CC9B8002564C2 /* Gender.swift */; };
 		E1C9B4AA2B0CD5A6002564C2 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4A92B0CD5A6002564C2 /* EmployeeTableViewCell.swift */; };
 		E1C9B4AC2B0CD5C9002564C2 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4AB2B0CD5C9002564C2 /* ColorTableViewCell.swift */; };
-		E1C9B4AE2B0CE18A002564C2 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4AD2B0CE18A002564C2 /* CircleView.swift */; };
 		E1C9B4B42B0CF0D0002564C2 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4B32B0CF0D0002564C2 /* UIImage.swift */; };
 		E1C9B4B62B0CF37C002564C2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4B52B0CF37B002564C2 /* UIColor.swift */; };
+		E1C9B4B82B0D2643002564C2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4B72B0D2643002564C2 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E144A3562B0D5FE4001BF181 /* AdditionalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewController.swift; sourceTree = "<group>"; };
+		E144A3582B0D6969001BF181 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		E144A35C2B0D87F0001BF181 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		E144A35E2B0D8914001BF181 /* SuccessfulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulViewController.swift; sourceTree = "<group>"; };
 		E1AE7C352B0B7A9E00A36B37 /* EmployeeSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AE7C382B0B7A9E00A36B37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1AE7C3A2B0B7A9E00A36B37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,9 +77,9 @@
 		E1C9B4A72B0CC9B8002564C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E1C9B4A92B0CD5A6002564C2 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		E1C9B4AB2B0CD5C9002564C2 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
-		E1C9B4AD2B0CE18A002564C2 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		E1C9B4B32B0CF0D0002564C2 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		E1C9B4B52B0CF37B002564C2 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E1C9B4B72B0D2643002564C2 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,9 @@
 				E1C9B4892B0C82FB002564C2 /* EmployeeViewController.swift */,
 				E1C9B48B2B0C8317002564C2 /* EmployeeListViewController.swift */,
 				E1C9B48D2B0C8334002564C2 /* ColorListViewController.swift */,
+				E144A3562B0D5FE4001BF181 /* AdditionalInfoViewController.swift */,
+				E144A35C2B0D87F0001BF181 /* ReviewViewController.swift */,
+				E144A35E2B0D8914001BF181 /* SuccessfulViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				E1AE7C522B0B814500A36B37 /* BindingTextField.swift */,
-				E1C9B4AD2B0CE18A002564C2 /* CircleView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -206,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				E1C9B4A42B0CB24A002564C2 /* Validation.swift */,
+				E144A3582B0D6969001BF181 /* Observable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -223,6 +234,7 @@
 			children = (
 				E1C9B4B32B0CF0D0002564C2 /* UIImage.swift */,
 				E1C9B4B52B0CF37B002564C2 /* UIColor.swift */,
+				E1C9B4B72B0D2643002564C2 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +312,7 @@
 			files = (
 				E1AE7C3D2B0B7A9E00A36B37 /* LoginViewController.swift in Sources */,
 				E1C9B4712B0BA52C002564C2 /* Webservice.swift in Sources */,
+				E144A35D2B0D87F0001BF181 /* ReviewViewController.swift in Sources */,
 				E1C9B4A52B0CB24A002564C2 /* Validation.swift in Sources */,
 				E1C9B4942B0C83D2002564C2 /* ColorListViewModel.swift in Sources */,
 				E1C9B48E2B0C8334002564C2 /* ColorListViewController.swift in Sources */,
@@ -321,8 +334,11 @@
 				E1AE7C3B2B0B7A9E00A36B37 /* SceneDelegate.swift in Sources */,
 				E1C9B4862B0C81B9002564C2 /* EmployeeListResponseModel.swift in Sources */,
 				E1C9B4B62B0CF37C002564C2 /* UIColor.swift in Sources */,
-				E1C9B4AE2B0CE18A002564C2 /* CircleView.swift in Sources */,
+				E1C9B4B82B0D2643002564C2 /* UIView.swift in Sources */,
+				E144A3592B0D696A001BF181 /* Observable.swift in Sources */,
 				E1C9B48A2B0C82FB002564C2 /* EmployeeViewController.swift in Sources */,
+				E144A35F2B0D8914001BF181 /* SuccessfulViewController.swift in Sources */,
+				E144A3572B0D5FE5001BF181 /* AdditionalInfoViewController.swift in Sources */,
 				E1C9B4922B0C83B0002564C2 /* EmployeeListViewModel.swift in Sources */,
 				E1C9B4842B0C7FE6002564C2 /* LoginRequestModel.swift in Sources */,
 			);
