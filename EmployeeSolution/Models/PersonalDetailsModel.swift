@@ -14,5 +14,20 @@ struct PersonalDetailsModel: Codable {
     let last_name: String
     let avatar: String
     let DOB: String
-    let gender: Gender
+    let gender: String
+}
+
+extension PersonalDetailsModel {
+    init?(_ viewModel: EmployeeViewModel) {
+        guard let userLoginToken = viewModel.userLoginToken else {
+        return nil
+    }
+        self.id = viewModel.id ?? 0
+        self.email = viewModel.email ?? ""
+        self.first_name =  viewModel.firstName ?? ""
+        self.last_name = viewModel.lastName ?? ""
+        self.avatar = viewModel.avatar ?? ""
+        self.DOB = viewModel.dOB ?? ""
+        self.gender = viewModel.gender ?? ""
+    }
 }

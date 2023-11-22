@@ -12,3 +12,35 @@ struct EmployeeRequestModel: Codable {
     let personalDetails: PersonalDetailsModel
     let additionalInformation: AdditionalInformationModel
 }
+
+
+extension EmployeeRequestModel {
+    
+    init?(_ viewModel: EmployeeViewModel) {
+        guard let userLoginToken = viewModel.userLoginToken else {
+        return nil
+    }
+        self.userLoginToken = userLoginToken
+        self.personalDetails = PersonalDetailsModel.init(id: viewModel.id ?? 0, email: viewModel.email ?? "", first_name: viewModel.firstName ?? "", last_name: viewModel.lastName ?? "", avatar: viewModel.avatar ?? "", DOB: viewModel.dOB ?? "", gender: viewModel.gender ?? "")
+        self.additionalInformation = AdditionalInformationModel.init(placeOfBirth: viewModel.placeOfBirth ?? "", preferredColor: viewModel.preferredColor ?? "", residentialAddress: viewModel.residentialAddress ?? "")
+    }
+    
+    static func create(viewModel: EmployeeViewModel) -> Resource<EmployeeResponseModel?> {
+        let employee = EmployeeRequestModel(viewModel)
+        
+        guard let url = URL(string: "https://reqres.in/api/users") else {
+            fatalError("URL is incorrect!")
+        }
+        
+        guard let data = try? JSONEncoder().encode(employee) else {
+            fatalError("Error encoding order!")
+        }
+        
+        var resource = Resource<EmployeeResponseModel?>(url: url)
+        resource.httpMethod = HttpMethod.post
+        resource.body = data
+        
+        return resource
+    }
+}
+

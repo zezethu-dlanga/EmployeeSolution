@@ -12,3 +12,14 @@ struct AdditionalInformationModel: Codable {
     let preferredColor: String
     let residentialAddress: String
 }
+
+extension AdditionalInformationModel {
+    init?(_ viewModel: EmployeeViewModel) {
+        guard let userLoginToken = viewModel.userLoginToken else {
+        return nil
+    }
+        self.placeOfBirth = viewModel.placeOfBirth ?? ""
+        self.preferredColor =  viewModel.preferredColor ?? ""
+        self.residentialAddress = viewModel.residentialAddress ?? ""
+    }
+}

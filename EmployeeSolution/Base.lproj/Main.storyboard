@@ -419,6 +419,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="submitButtonTapped:" destination="ITD-tI-bs3" eventType="touchUpInside" id="2la-cN-yU4"/>
                                     <segue destination="hPI-Mz-Wu0" kind="show" id="Msw-dw-rtI"/>
                                 </connections>
                             </button>

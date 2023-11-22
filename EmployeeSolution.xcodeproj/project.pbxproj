@@ -35,7 +35,6 @@
 		E1C9B4962B0CA198002564C2 /* PersonalDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4952B0CA198002564C2 /* PersonalDetailsModel.swift */; };
 		E1C9B49A2B0CA1C7002564C2 /* AdditionalInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4992B0CA1C7002564C2 /* AdditionalInformationModel.swift */; };
 		E1C9B4A52B0CB24A002564C2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4A42B0CB24A002564C2 /* Validation.swift */; };
-		E1C9B4A82B0CC9B8002564C2 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4A72B0CC9B8002564C2 /* Gender.swift */; };
 		E1C9B4AA2B0CD5A6002564C2 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4A92B0CD5A6002564C2 /* EmployeeTableViewCell.swift */; };
 		E1C9B4AC2B0CD5C9002564C2 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4AB2B0CD5C9002564C2 /* ColorTableViewCell.swift */; };
 		E1C9B4B42B0CF0D0002564C2 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4B32B0CF0D0002564C2 /* UIImage.swift */; };
@@ -74,7 +73,6 @@
 		E1C9B4952B0CA198002564C2 /* PersonalDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsModel.swift; sourceTree = "<group>"; };
 		E1C9B4992B0CA1C7002564C2 /* AdditionalInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInformationModel.swift; sourceTree = "<group>"; };
 		E1C9B4A42B0CB24A002564C2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		E1C9B4A72B0CC9B8002564C2 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E1C9B4A92B0CD5A6002564C2 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		E1C9B4AB2B0CD5C9002564C2 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		E1C9B4B32B0CF0D0002564C2 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				E1C9B4B22B0CF0B0002564C2 /* Extensions */,
-				E1C9B4A62B0CC953002564C2 /* Enums */,
 				E1C9B4A12B0CB192002564C2 /* Helpers */,
 				E1AE7C4D2B0B7B4D00A36B37 /* Services */,
 				E1AE7C4F2B0B7B8100A36B37 /* Models */,
@@ -221,14 +218,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		E1C9B4A62B0CC953002564C2 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				E1C9B4A72B0CC9B8002564C2 /* Gender.swift */,
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
 		E1C9B4B22B0CF0B0002564C2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,7 +314,6 @@
 				E1C9B4B42B0CF0D0002564C2 /* UIImage.swift in Sources */,
 				E1AE7C392B0B7A9E00A36B37 /* AppDelegate.swift in Sources */,
 				E1AE7C552B0B81C400A36B37 /* LoginViewModel.swift in Sources */,
-				E1C9B4A82B0CC9B8002564C2 /* Gender.swift in Sources */,
 				E1C9B4AA2B0CD5A6002564C2 /* EmployeeTableViewCell.swift in Sources */,
 				E1C9B4882B0C81D2002564C2 /* ColorListResponseModel.swift in Sources */,
 				E1C9B4962B0CA198002564C2 /* PersonalDetailsModel.swift in Sources */,

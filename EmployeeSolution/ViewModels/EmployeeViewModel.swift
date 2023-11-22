@@ -16,9 +16,7 @@ struct EmployeeViewModel {
     var lastName: String?
     var avatar: String?
     var dOB: String?
-    var gender: [String] {
-        return Gender.allCases.map {$0.rawValue.capitalized}
-    }
+    var gender: String?
     
     var placeOfBirth: String?
     var preferredColor: String?

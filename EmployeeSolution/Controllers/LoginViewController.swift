@@ -67,8 +67,20 @@ class LoginViewController: UIViewController {
     
     //MARK: - Action
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        print(loginViewModel.email)
-        print(loginViewModel.password)
+        print(loginViewModel.email ?? "")
+        print(loginViewModel.password ?? "")
+        
+        Webservice().load(resource: LoginRequestModel.create(viewModel: self.loginViewModel)) { result in
+            switch result {
+                case .success(let login):
+                    if let login = login {
+                        print(login.token)
+                    }
+                case .failure(let error):
+                    print(error)
+            }
+            
+        }
     }
 }
 
