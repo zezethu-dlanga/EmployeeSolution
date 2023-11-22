@@ -9,11 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var loginButton: UIButton! {
-        didSet {
-            loginButton.backgroundColor = UIColor.lightGray
-        }
-    }
+    @IBOutlet weak var loginButton: UIButton!
     
     //MARK: - Variables
     private var loginViewModel = LoginViewModel()
@@ -37,9 +33,9 @@ class LoginViewController: UIViewController {
         emailTextField.borderStyle = .line
         emailTextField.bind { [weak self] text in
             if Validation.isValidEmailAddress(text) {
-                self?.loginButton.backgroundColor = UIColor.blue
+                self?.loginButton.titleLabel?.textColor = UIColor.black
             } else {
-                self?.loginButton.backgroundColor = UIColor.lightGray
+                self?.loginButton.titleLabel?.textColor = UIColor.lightGray
             }
             //self?.loginButton.isEnabled = Validation.isValidEmailAddress(text)
             self?.loginViewModel.email = text
