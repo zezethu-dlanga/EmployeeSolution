@@ -131,7 +131,7 @@
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="sBj-Gt-rfs" kind="presentation" id="Soo-9T-hHB"/>
+                                            <action selector="employeeButtonTapped:" destination="z2s-iS-UZH" eventType="touchUpInside" id="xJD-8U-1Y3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -188,9 +188,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="avatarImageView" destination="VlJ-5u-l3f" id="lBI-uZ-zOM"/>
                         <outlet property="dateOfBirthTextField" destination="Lig-aM-Vjs" id="3rS-fg-VAz"/>
+                        <outlet property="emailLabel" destination="t00-J2-4vh" id="FEb-cP-Zhq"/>
+                        <outlet property="fullNameLabel" destination="KxB-k1-h3K" id="AWj-kl-0LO"/>
                         <outlet property="placeOfBirthTextField" destination="5MD-uH-deM" id="8lS-Q3-ySc"/>
                         <segue destination="iLU-sP-Jfk" kind="show" identifier="toAdditionalInfo" id="67I-GE-2ea"/>
+                        <segue destination="sBj-Gt-rfs" kind="presentation" identifier="toEmployeeList" id="dtv-4j-SYW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eQ-8p-r6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

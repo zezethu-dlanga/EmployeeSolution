@@ -8,10 +8,18 @@
 import Foundation
 import UIKit
 
+protocol EmployeeDelegate {
+    func selectedEmployee(viewModel: EmployeeViewModel)
+}
+
 class EmployeeListViewController: UITableViewController {
     
+    //MARK: - Variables
     var employeeListViewModel = EmployeeListViewModel()
+    var employeeViewModel = EmployeeViewModel()
+    var delegate: EmployeeDelegate?
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +44,7 @@ class EmployeeListViewController: UITableViewController {
         }
     }
     
+    //MARK: - Table View
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -58,9 +67,14 @@ class EmployeeListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //uncheck all cells
-        tableView.visibleCells.forEach { cell in
-            cell.accessoryType = .none
-        }
+        var selectedEmployee = employeeListViewModel.employeeDataViewModel(at: indexPath.row)
+        employeeViewModel.id = selectedEmployee.id
+        employeeViewModel.firstName = selectedEmployee.firstName
+        employeeViewModel.lastName = selectedEmployee.lastName
+        employeeViewModel.fullName = selectedEmployee.fullName
+        employeeViewModel.email = selectedEmployee.email
+        employeeViewModel.avatar = selectedEmployee.avatar
+        self.delegate?.selectedEmployee(viewModel: employeeViewModel)
+        self.dismiss(animated: true, completion: nil)
     }
 }

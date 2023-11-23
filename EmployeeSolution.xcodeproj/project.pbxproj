@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E144A3572B0D5FE5001BF181 /* AdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A3562B0D5FE4001BF181 /* AdditionalInfoViewController.swift */; };
-		E144A3592B0D696A001BF181 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A3582B0D6969001BF181 /* Observable.swift */; };
 		E144A35D2B0D87F0001BF181 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A35C2B0D87F0001BF181 /* ReviewViewController.swift */; };
 		E144A35F2B0D8914001BF181 /* SuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A35E2B0D8914001BF181 /* SuccessfulViewController.swift */; };
 		E1858C932B0F15C300E1937A /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1858C922B0F15C300E1937A /* UserDefault.swift */; };
@@ -45,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		E144A3562B0D5FE4001BF181 /* AdditionalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewController.swift; sourceTree = "<group>"; };
-		E144A3582B0D6969001BF181 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		E144A35C2B0D87F0001BF181 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		E144A35E2B0D8914001BF181 /* SuccessfulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulViewController.swift; sourceTree = "<group>"; };
 		E1858C922B0F15C300E1937A /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				E1C9B4A42B0CB24A002564C2 /* Validation.swift */,
-				E144A3582B0D6969001BF181 /* Observable.swift */,
 				E1858C922B0F15C300E1937A /* UserDefault.swift */,
 			);
 			path = Helpers;
@@ -327,7 +324,6 @@
 				E1C9B4862B0C81B9002564C2 /* EmployeeListResponseModel.swift in Sources */,
 				E1C9B4B62B0CF37C002564C2 /* UIColor.swift in Sources */,
 				E1C9B4B82B0D2643002564C2 /* UIView.swift in Sources */,
-				E144A3592B0D696A001BF181 /* Observable.swift in Sources */,
 				E1C9B48A2B0C82FB002564C2 /* EmployeeViewController.swift in Sources */,
 				E144A35F2B0D8914001BF181 /* SuccessfulViewController.swift in Sources */,
 				E144A3572B0D5FE5001BF181 /* AdditionalInfoViewController.swift in Sources */,

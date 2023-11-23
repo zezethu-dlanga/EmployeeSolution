@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 
-class EmployeeViewController: UIViewController {
+class EmployeeViewController: UIViewController, EmployeeDelegate {
     
     //MARK: - Outlets
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var placeOfBirthTextField: UITextField!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
     
     //MARK: - Variables
     private var employeeViewModel = EmployeeViewModel()
@@ -28,6 +31,13 @@ class EmployeeViewController: UIViewController {
         datePicker.datePickerMode = .date
         datePicker.maximumDate = Date()
         dateOfBirthTextField.addTarget(self, action: #selector(displayPicker), for: .touchDown)
+    }
+    
+    func selectedEmployee(viewModel: EmployeeViewModel) {
+        employeeViewModel = viewModel
+        emailLabel.text = employeeViewModel.email ?? ""
+        fullNameLabel.text = employeeViewModel.fullName
+        avatarImageView.image = UIImage(url: URL(string: employeeViewModel.avatar ?? ""))
     }
     
     //MARK: - Date of birth Selection
@@ -61,11 +71,28 @@ class EmployeeViewController: UIViewController {
         self.performSegue(withIdentifier: "toAdditionalInfo", sender: self)
     }
     
+    @IBAction func employeeButtonTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toEmployeeList", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         employeeViewModel.dOB = dateOfBirthTextField.text
         employeeViewModel.placeOfBirth = placeOfBirthTextField.text
-        if let additionalInfoVC = segue.destination as? AdditionalInfoViewController {
-            additionalInfoVC.employeeViewModel = employeeViewModel
+        
+        if segue.identifier == "toAdditionalInfo" {
+            if let additionalInfoVC = segue.destination as? AdditionalInfoViewController {
+                additionalInfoVC.employeeViewModel = employeeViewModel
+            }
+        } else {
+            guard let nav = segue.destination as? UINavigationController else {
+                fatalError("NavigationController not fount")
+            }
+            
+            guard let employeeListVC = nav.viewControllers.first as? EmployeeListViewController else {
+                fatalError("EmployeeListViewController not fount")
+            }
+            employeeListVC.employeeViewModel = employeeViewModel
+            employeeListVC.delegate = self
         }
     }
 }

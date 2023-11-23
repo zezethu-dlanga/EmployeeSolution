@@ -14,6 +14,7 @@ struct EmployeeViewModel {
     var email: String?
     var firstName: String?
     var lastName: String?
+    var fullName: String?
     var avatar: String?
     var dOB: String?
     var gender: String?
