@@ -183,10 +183,15 @@
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Qbd-Xz-ecj">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="iLU-sP-Jfk" kind="show" id="nBB-fR-eFb"/>
+                                <action selector="nextButtonTapped:" destination="z2s-iS-UZH" id="bNo-Hs-Q30"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateOfBirthTextField" destination="Lig-aM-Vjs" id="3rS-fg-VAz"/>
+                        <outlet property="placeOfBirthTextField" destination="5MD-uH-deM" id="8lS-Q3-ySc"/>
+                        <segue destination="iLU-sP-Jfk" kind="show" identifier="toAdditionalInfo" id="67I-GE-2ea"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eQ-8p-r6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -309,10 +314,13 @@
                         <barButtonItem key="rightBarButtonItem" title="Next" id="cZw-j0-L9j">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="ITD-tI-bs3" kind="show" id="CHV-Mz-877"/>
+                                <action selector="nextButtonTapped:" destination="iLU-sP-Jfk" id="fSQ-Cc-Sg8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="ITD-tI-bs3" kind="show" identifier="toReview" id="MFQ-lz-Exr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6Q-Bo-fpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -428,7 +436,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="submitButtonTapped:" destination="ITD-tI-bs3" eventType="touchUpInside" id="2la-cN-yU4"/>
-                                    <segue destination="hPI-Mz-Wu0" kind="show" id="Msw-dw-rtI"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWF-kk-Vxo">
@@ -501,6 +508,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Review" id="JX3-4P-O86"/>
+                    <connections>
+                        <segue destination="hPI-Mz-Wu0" kind="show" identifier="toSuccessful" id="8Ot-77-h5P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOH-IS-vTA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

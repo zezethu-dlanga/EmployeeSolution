@@ -11,7 +11,7 @@ import UIKit
 class ReviewViewController: UIViewController {
     
     //MARK: - Variables
-    private var employeeViewModel = EmployeeViewModel()
+    var employeeViewModel = EmployeeViewModel()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -19,8 +19,10 @@ class ReviewViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
-    
+    //MARK: - Action
     @IBAction func submitButtonTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toSuccessful", sender: self)
+        
         Webservice().load(resource: EmployeeRequestModel.create(viewModel: self.employeeViewModel)) { result in
             switch result {
                 case .success(let response):
@@ -31,6 +33,13 @@ class ReviewViewController: UIViewController {
                     print(error)
             }
             
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let successVC = segue.destination as? SuccessfulViewController {
+            successVC.employeeViewModel = employeeViewModel
         }
     }
 }

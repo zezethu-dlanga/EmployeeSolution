@@ -56,4 +56,11 @@ class EmployeeListViewController: UITableViewController {
         cell.avatarImageView.image = UIImage(url: URL(string: viewModel.avatar))
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //uncheck all cells
+        tableView.visibleCells.forEach { cell in
+            cell.accessoryType = .none
+        }
+    }
 }
