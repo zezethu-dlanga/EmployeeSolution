@@ -9,14 +9,17 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var messageLabel: UILabel!
-    
     //MARK: - Variables
     private var loginViewModel = LoginViewModel()
     private let userDefault = UserDefault.sharedInstance
     private let emailTextField = BindingTextField()
     private let passwordTextField = BindingTextField()
+    
+    
+    //MARK: - Outlets
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
+    
     
     //MARK: - Lifecycle
     override func viewDidLoad() {

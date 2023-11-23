@@ -11,7 +11,7 @@ import UIKit
 class EmployeeViewController: UIViewController, EmployeeDelegate {
     
     //MARK: - Variables
-    private var employeeViewModel = EmployeeViewModel()
+    var employeeViewModel = EmployeeViewModel()
     private var datePicker = UIDatePicker()
     
     
@@ -99,4 +99,6 @@ class EmployeeViewController: UIViewController, EmployeeDelegate {
             employeeListVC.delegate = self
         }
     }
+    
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {}
 }
