@@ -20,6 +20,9 @@ struct EmployeeViewModel {
     var gender: String?
     
     var placeOfBirth: String?
-    var preferredColor: String?
+    var colorName: String?
+    var colorCode: String?
     var residentialAddress: String?
+    
+    var createdAt: String?
 }

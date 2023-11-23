@@ -223,7 +223,7 @@
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="hCQ-m4-ng3" kind="presentation" id="jhu-aK-7W6"/>
+                                            <action selector="employeeButtonTapped:" destination="iLU-sP-Jfk" eventType="touchUpInside" id="8dB-fQ-oM5"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdG-mI-qSh">
@@ -283,10 +283,13 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sqq-c3-nIo">
                                 <rect key="frame" x="101" y="184" width="191" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
+                                    <segment title="Male"/>
                                     <segment title="Female"/>
                                     <segment title="Other"/>
                                 </segments>
+                                <connections>
+                                    <action selector="genderSegmentedControlIndexChangedWithSender:" destination="iLU-sP-Jfk" eventType="valueChanged" id="Yad-QU-Smw"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-3w-zv3">
                                 <rect key="frame" x="20" y="153" width="353" height="21"/>
@@ -323,7 +326,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressTextField" destination="bue-R2-Gso" id="oX6-g9-lQ5"/>
+                        <outlet property="colorCodeView" destination="UdG-mI-qSh" id="aI4-Up-6r2"/>
+                        <outlet property="colorNameLabel" destination="SKJ-YJ-Ral" id="pKc-7y-aX9"/>
                         <segue destination="ITD-tI-bs3" kind="show" identifier="toReview" id="MFQ-lz-Exr"/>
+                        <segue destination="hCQ-m4-ng3" kind="presentation" identifier="toColorList" id="Mt8-jB-Jzk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6Q-Bo-fpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -513,6 +520,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Review" id="JX3-4P-O86"/>
                     <connections>
+                        <outlet property="addressLabel" destination="BwA-nY-LDe" id="R27-PZ-zul"/>
+                        <outlet property="avatarImageView" destination="ZNK-kM-Zrb" id="9Xk-sD-NWW"/>
+                        <outlet property="colorNameLabel" destination="1Dy-ZM-qv9" id="oET-Vz-oSm"/>
+                        <outlet property="dateOfBirthLabel" destination="ZOh-AA-Iui" id="Dw7-Ca-FhJ"/>
+                        <outlet property="emailLabel" destination="sGD-Gx-6L4" id="rW7-6x-gsE"/>
+                        <outlet property="fullNameLabel" destination="1Ej-Dh-Rp0" id="gT9-x6-yq3"/>
+                        <outlet property="genderLabel" destination="SRR-16-oFd" id="Pi8-em-t6d"/>
+                        <outlet property="placeOfBirthLabel" destination="RCr-Zr-MWP" id="gUy-lW-D6z"/>
                         <segue destination="hPI-Mz-Wu0" kind="show" identifier="toSuccessful" id="8Ot-77-h5P"/>
                     </connections>
                 </viewController>
@@ -546,7 +561,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Fet-Pn-EoH"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Submit">
+                                <state key="normal" title="Done">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

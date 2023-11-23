@@ -22,7 +22,7 @@ extension EmployeeRequestModel {
     }
         self.userLoginToken = userLoginToken
         self.personalDetails = PersonalDetailsModel.init(id: viewModel.id ?? 0, email: viewModel.email ?? "", first_name: viewModel.firstName ?? "", last_name: viewModel.lastName ?? "", avatar: viewModel.avatar ?? "", DOB: viewModel.dOB ?? "", gender: viewModel.gender ?? "")
-        self.additionalInformation = AdditionalInformationModel.init(placeOfBirth: viewModel.placeOfBirth ?? "", preferredColor: viewModel.preferredColor ?? "", residentialAddress: viewModel.residentialAddress ?? "")
+        self.additionalInformation = AdditionalInformationModel.init(placeOfBirth: viewModel.placeOfBirth ?? "", preferredColor: viewModel.colorName ?? "", residentialAddress: viewModel.residentialAddress ?? "")
     }
     
     static func create(viewModel: EmployeeViewModel) -> Resource<EmployeeResponseModel?> {

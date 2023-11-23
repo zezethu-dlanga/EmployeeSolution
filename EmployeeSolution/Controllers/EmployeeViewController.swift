@@ -10,6 +10,11 @@ import UIKit
 
 class EmployeeViewController: UIViewController, EmployeeDelegate {
     
+    //MARK: - Variables
+    private var employeeViewModel = EmployeeViewModel()
+    private var datePicker = UIDatePicker()
+    
+    
     //MARK: - Outlets
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var placeOfBirthTextField: UITextField!
@@ -17,9 +22,6 @@ class EmployeeViewController: UIViewController, EmployeeDelegate {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     
-    //MARK: - Variables
-    private var employeeViewModel = EmployeeViewModel()
-    private var datePicker = UIDatePicker()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -39,6 +41,7 @@ class EmployeeViewController: UIViewController, EmployeeDelegate {
         fullNameLabel.text = employeeViewModel.fullName
         avatarImageView.image = UIImage(url: URL(string: employeeViewModel.avatar ?? ""))
     }
+    
     
     //MARK: - Date of birth Selection
     @objc func displayPicker(textField: UITextField) {
@@ -65,6 +68,7 @@ class EmployeeViewController: UIViewController, EmployeeDelegate {
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
+    
     
     //MARK: - Action
     @IBAction func nextButtonTapped(_ sender: UIButton) {

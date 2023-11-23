@@ -70,21 +70,20 @@ class LoginViewController: UIViewController {
     
     //MARK: - Action
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toEmployeeSegue", sender: self)
         
-//        if userDefault.getEmail() == loginViewModel.email?.lowercased() && userDefault.getPass() == loginViewModel.password {
-//            Webservice().load(resource: LoginRequestModel.create(viewModel: self.loginViewModel)) { result in
-//                switch result {
-//                    case .success(let login):
-//                        if let login = login {
-//                            self.userDefault.saveToken(value: login.token)
-//                            self.performSegue(withIdentifier: "toEmployeeSegue", sender: self)
-//                        }
-//                    case .failure(let error):
-//                        print(error)                }
-//            }
-//        } else {
-//            messageLabel.text = "Details you have entered are incorrect, please try again."
-//        }
+        if userDefault.getEmail() == loginViewModel.email?.lowercased() && userDefault.getPass() == loginViewModel.password {
+            Webservice().load(resource: LoginRequestModel.create(viewModel: self.loginViewModel)) { result in
+                switch result {
+                    case .success(let login):
+                        if let login = login {
+                            self.userDefault.saveToken(value: login.token)
+                            self.performSegue(withIdentifier: "toEmployeeSegue", sender: self)
+                        }
+                    case .failure(let error):
+                        print(error)                }
+            }
+        } else {
+            messageLabel.text = "Details you have entered are incorrect, please try again."
+        }
     }
 }

@@ -19,6 +19,7 @@ class EmployeeListViewController: UITableViewController {
     var employeeViewModel = EmployeeViewModel()
     var delegate: EmployeeDelegate?
     
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +27,6 @@ class EmployeeListViewController: UITableViewController {
         populateEmployees()
     }
     
-    private func populateEmployees() {
-        guard let url = URL(string: "https://reqres.in/api/users?page=1&per_page=12") else {
-            fatalError("URL was incorrect")
-        }
-        
-        let resource = Resource<EmployeeListResponseModel>(url: url)
-        
-        Webservice().load(resource: resource) { [weak self] result in
-            switch result {
-                case .success(let employees):
-                    self?.employeeListViewModel.employeeListViewModel = employees.data.map(EmployeeDataViewModel.init)
-                    self?.tableView.reloadData()
-                case .failure(let error):
-                    print(error)
-            }
-        }
-    }
     
     //MARK: - Table View
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,7 +51,7 @@ class EmployeeListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selectedEmployee = employeeListViewModel.employeeDataViewModel(at: indexPath.row)
+        let selectedEmployee = employeeListViewModel.employeeDataViewModel(at: indexPath.row)
         employeeViewModel.id = selectedEmployee.id
         employeeViewModel.firstName = selectedEmployee.firstName
         employeeViewModel.lastName = selectedEmployee.lastName
@@ -76,5 +60,25 @@ class EmployeeListViewController: UITableViewController {
         employeeViewModel.avatar = selectedEmployee.avatar
         self.delegate?.selectedEmployee(viewModel: employeeViewModel)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    //MARK: - Helper methods
+    private func populateEmployees() {
+        guard let url = URL(string: "https://reqres.in/api/users?page=1&per_page=12") else {
+            fatalError("URL was incorrect")
+        }
+        
+        let resource = Resource<EmployeeListResponseModel>(url: url)
+        
+        Webservice().load(resource: resource) { [weak self] result in
+            switch result {
+                case .success(let employees):
+                    self?.employeeListViewModel.employeeListViewModel = employees.data.map(EmployeeDataViewModel.init)
+                    self?.tableView.reloadData()
+                case .failure(let error):
+                    print(error)
+            }
+        }
     }
 }

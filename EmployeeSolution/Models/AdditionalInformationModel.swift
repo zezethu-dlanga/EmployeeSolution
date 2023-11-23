@@ -19,7 +19,7 @@ extension AdditionalInformationModel {
         return nil
     }
         self.placeOfBirth = viewModel.placeOfBirth ?? ""
-        self.preferredColor =  viewModel.preferredColor ?? ""
+        self.preferredColor =  viewModel.colorName ?? ""
         self.residentialAddress = viewModel.residentialAddress ?? ""
     }
 }
