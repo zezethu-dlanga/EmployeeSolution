@@ -26,7 +26,7 @@ extension LoginRequestModel {
     static func create(viewModel: LoginViewModel) -> Resource<LoginResponseModel?> {
         let login = LoginRequestModel(viewModel)
         
-        guard let url = URL(string: "https://reqres.in/api/login") else {
+        guard let url = URL(string: Path.login.rawValue) else {
             fatalError("URL is incorrect!")
         }
         

@@ -74,7 +74,7 @@ class EmployeeListViewController: UITableViewController {
     //MARK: - Helper methods
     private func populateEmployees() {
         self.showTableViewpinner(onView: self.view)
-        guard let url = URL(string: "https://reqres.in/api/users?page=1&per_page=12") else {
+        guard let url = URL(string: Path.getEmployeeList.rawValue) else {
             fatalError("URL was incorrect")
         }
         

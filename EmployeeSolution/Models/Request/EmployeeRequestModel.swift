@@ -28,7 +28,7 @@ extension EmployeeRequestModel {
     static func create(viewModel: EmployeeViewModel) -> Resource<EmployeeResponseModel?> {
         let employee = EmployeeRequestModel(viewModel)
         
-        guard let url = URL(string: "https://reqres.in/api/users") else {
+        guard let url = URL(string: Path.updateEmployee.rawValue) else {
             fatalError("URL is incorrect!")
         }
         

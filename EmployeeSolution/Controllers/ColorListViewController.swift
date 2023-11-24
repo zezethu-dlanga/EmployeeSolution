@@ -71,7 +71,7 @@ class ColorListViewController: UITableViewController {
     //MARK: - Helper methods
     private func populateColors() {
         self.showTableViewpinner(onView: self.view)
-        guard let url = URL(string: "https://reqres.in/api/unknown?per_page=12") else {
+        guard let url = URL(string: Path.getCodeList.rawValue) else {
             fatalError("URL was incorrect")
         }
         
