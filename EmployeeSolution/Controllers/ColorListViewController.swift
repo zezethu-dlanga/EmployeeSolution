@@ -59,9 +59,18 @@ class ColorListViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+            if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
+                    if indexPath == lastVisibleIndexPath {
+                        self.removeTableViewSpinner()
+                    }
+            }
+    }
+    
     
     //MARK: - Helper methods
     private func populateColors() {
+        self.showTableViewpinner(onView: self.view)
         guard let url = URL(string: "https://reqres.in/api/unknown?per_page=12") else {
             fatalError("URL was incorrect")
         }
@@ -71,9 +80,11 @@ class ColorListViewController: UITableViewController {
         Webservice().load(resource: resource) { [weak self] result in
             switch result {
                 case .success(let colors):
+                    self?.removeSpinner()
                     self?.colorListViewModel.colorListViewModel = colors.data.map(ColorDataViewModel.init)
                     self?.tableView.reloadData()
                 case .failure(let error):
+                    self?.removeSpinner()
                     print(error)
             }
         }

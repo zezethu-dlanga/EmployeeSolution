@@ -11,6 +11,11 @@
 		E144A35D2B0D87F0001BF181 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A35C2B0D87F0001BF181 /* ReviewViewController.swift */; };
 		E144A35F2B0D8914001BF181 /* SuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A35E2B0D8914001BF181 /* SuccessfulViewController.swift */; };
 		E1858C932B0F15C300E1937A /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1858C922B0F15C300E1937A /* UserDefault.swift */; };
+		E1858CA42B0FE39800E1937A /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1858CA32B0FE39800E1937A /* DateUtil.swift */; };
+		E1858CA62B0FF3C300E1937A /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1858CA52B0FF3C300E1937A /* LoginViewModelTests.swift */; };
+		E1858CA82B1025FA00E1937A /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1858CA72B1025FA00E1937A /* ReviewViewModel.swift */; };
+		E1858CAA2B103A0100E1937A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1858CA92B103A0100E1937A /* UIViewController.swift */; };
+		E1858CAC2B103F0000E1937A /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1858CAB2B103F0000E1937A /* UITableViewController.swift */; };
 		E1AE7C392B0B7A9E00A36B37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7C382B0B7A9E00A36B37 /* AppDelegate.swift */; };
 		E1AE7C3B2B0B7A9E00A36B37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7C3A2B0B7A9E00A36B37 /* SceneDelegate.swift */; };
 		E1AE7C3D2B0B7A9E00A36B37 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7C3C2B0B7A9E00A36B37 /* LoginViewController.swift */; };
@@ -42,11 +47,27 @@
 		E1C9B4B82B0D2643002564C2 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C9B4B72B0D2643002564C2 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E1858C9E2B0FD0DA00E1937A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1AE7C2D2B0B7A9E00A36B37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1AE7C342B0B7A9E00A36B37;
+			remoteInfo = EmployeeSolution;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		E144A3562B0D5FE4001BF181 /* AdditionalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewController.swift; sourceTree = "<group>"; };
 		E144A35C2B0D87F0001BF181 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		E144A35E2B0D8914001BF181 /* SuccessfulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulViewController.swift; sourceTree = "<group>"; };
 		E1858C922B0F15C300E1937A /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		E1858C9A2B0FD0DA00E1937A /* EmployeeSolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeeSolutionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1858CA32B0FE39800E1937A /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		E1858CA52B0FF3C300E1937A /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		E1858CA72B1025FA00E1937A /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		E1858CA92B103A0100E1937A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		E1858CAB2B103F0000E1937A /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
 		E1AE7C352B0B7A9E00A36B37 /* EmployeeSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AE7C382B0B7A9E00A36B37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1AE7C3A2B0B7A9E00A36B37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +102,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E1858C972B0FD0DA00E1937A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1AE7C322B0B7A9E00A36B37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,10 +119,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1858C9B2B0FD0DA00E1937A /* EmployeeSolutionTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1858CA52B0FF3C300E1937A /* LoginViewModelTests.swift */,
+			);
+			path = EmployeeSolutionTests;
+			sourceTree = "<group>";
+		};
 		E1AE7C2C2B0B7A9E00A36B37 = {
 			isa = PBXGroup;
 			children = (
 				E1AE7C372B0B7A9E00A36B37 /* EmployeeSolution */,
+				E1858C9B2B0FD0DA00E1937A /* EmployeeSolutionTests */,
 				E1AE7C362B0B7A9E00A36B37 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E1AE7C352B0B7A9E00A36B37 /* EmployeeSolution.app */,
+				E1858C9A2B0FD0DA00E1937A /* EmployeeSolutionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +173,7 @@
 				E1C9B48F2B0C839B002564C2 /* EmployeeViewModel.swift */,
 				E1C9B4912B0C83B0002564C2 /* EmployeeListViewModel.swift */,
 				E1C9B4932B0C83D2002564C2 /* ColorListViewModel.swift */,
+				E1858CA72B1025FA00E1937A /* ReviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -214,6 +253,7 @@
 			children = (
 				E1C9B4A42B0CB24A002564C2 /* Validation.swift */,
 				E1858C922B0F15C300E1937A /* UserDefault.swift */,
+				E1858CA32B0FE39800E1937A /* DateUtil.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -224,6 +264,8 @@
 				E1C9B4B32B0CF0D0002564C2 /* UIImage.swift */,
 				E1C9B4B52B0CF37B002564C2 /* UIColor.swift */,
 				E1C9B4B72B0D2643002564C2 /* UIView.swift */,
+				E1858CA92B103A0100E1937A /* UIViewController.swift */,
+				E1858CAB2B103F0000E1937A /* UITableViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +273,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E1858C992B0FD0DA00E1937A /* EmployeeSolutionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1858CA02B0FD0DA00E1937A /* Build configuration list for PBXNativeTarget "EmployeeSolutionTests" */;
+			buildPhases = (
+				E1858C962B0FD0DA00E1937A /* Sources */,
+				E1858C972B0FD0DA00E1937A /* Frameworks */,
+				E1858C982B0FD0DA00E1937A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1858C9F2B0FD0DA00E1937A /* PBXTargetDependency */,
+			);
+			name = EmployeeSolutionTests;
+			productName = EmployeeSolutionTests;
+			productReference = E1858C9A2B0FD0DA00E1937A /* EmployeeSolutionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E1AE7C342B0B7A9E00A36B37 /* EmployeeSolution */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1AE7C492B0B7AA000A36B37 /* Build configuration list for PBXNativeTarget "EmployeeSolution" */;
@@ -258,6 +318,11 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					E1858C992B0FD0DA00E1937A = {
+						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
+						TestTargetID = E1AE7C342B0B7A9E00A36B37;
+					};
 					E1AE7C342B0B7A9E00A36B37 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -277,11 +342,19 @@
 			projectRoot = "";
 			targets = (
 				E1AE7C342B0B7A9E00A36B37 /* EmployeeSolution */,
+				E1858C992B0FD0DA00E1937A /* EmployeeSolutionTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E1858C982B0FD0DA00E1937A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1AE7C332B0B7A9E00A36B37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +368,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E1858C962B0FD0DA00E1937A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1858CA62B0FF3C300E1937A /* LoginViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1AE7C312B0B7A9E00A36B37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +394,8 @@
 				E1858C932B0F15C300E1937A /* UserDefault.swift in Sources */,
 				E1C9B48C2B0C8317002564C2 /* EmployeeListViewController.swift in Sources */,
 				E1C9B4B42B0CF0D0002564C2 /* UIImage.swift in Sources */,
+				E1858CAA2B103A0100E1937A /* UIViewController.swift in Sources */,
+				E1858CA82B1025FA00E1937A /* ReviewViewModel.swift in Sources */,
 				E1AE7C392B0B7A9E00A36B37 /* AppDelegate.swift in Sources */,
 				E1AE7C552B0B81C400A36B37 /* LoginViewModel.swift in Sources */,
 				E1C9B4AA2B0CD5A6002564C2 /* EmployeeTableViewCell.swift in Sources */,
@@ -321,10 +404,12 @@
 				E1C9B4902B0C839B002564C2 /* EmployeeViewModel.swift in Sources */,
 				E1C9B4802B0C7F9B002564C2 /* EmployeeRequestModel.swift in Sources */,
 				E1AE7C3B2B0B7A9E00A36B37 /* SceneDelegate.swift in Sources */,
+				E1858CA42B0FE39800E1937A /* DateUtil.swift in Sources */,
 				E1C9B4862B0C81B9002564C2 /* EmployeeListResponseModel.swift in Sources */,
 				E1C9B4B62B0CF37C002564C2 /* UIColor.swift in Sources */,
 				E1C9B4B82B0D2643002564C2 /* UIView.swift in Sources */,
 				E1C9B48A2B0C82FB002564C2 /* EmployeeViewController.swift in Sources */,
+				E1858CAC2B103F0000E1937A /* UITableViewController.swift in Sources */,
 				E144A35F2B0D8914001BF181 /* SuccessfulViewController.swift in Sources */,
 				E144A3572B0D5FE5001BF181 /* AdditionalInfoViewController.swift in Sources */,
 				E1C9B4922B0C83B0002564C2 /* EmployeeListViewModel.swift in Sources */,
@@ -333,6 +418,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1858C9F2B0FD0DA00E1937A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1AE7C342B0B7A9E00A36B37 /* EmployeeSolution */;
+			targetProxy = E1858C9E2B0FD0DA00E1937A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E1AE7C3E2B0B7A9E00A36B37 /* Main.storyboard */ = {
@@ -354,6 +447,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E1858CA12B0FD0DA00E1937A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zezethudlanga.EmployeeSolutionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmployeeSolution.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EmployeeSolution";
+			};
+			name = Debug;
+		};
+		E1858CA22B0FD0DA00E1937A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zezethudlanga.EmployeeSolutionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmployeeSolution.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EmployeeSolution";
+			};
+			name = Release;
+		};
 		E1AE7C472B0B7AA000A36B37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -525,6 +655,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E1858CA02B0FD0DA00E1937A /* Build configuration list for PBXNativeTarget "EmployeeSolutionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1858CA12B0FD0DA00E1937A /* Debug */,
+				E1858CA22B0FD0DA00E1937A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E1AE7C302B0B7A9E00A36B37 /* Build configuration list for PBXProject "EmployeeSolution" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

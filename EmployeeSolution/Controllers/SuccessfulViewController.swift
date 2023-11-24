@@ -22,12 +22,20 @@ class SuccessfulViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-        messageLabel.text = "Congratulations you have successfully updated personal details and additional details for \(employeeViewModel.fullName ?? "") at \(employeeViewModel.createdAt ?? "")"
+        let date = DateUtil.getDate(timestamp: employeeViewModel.createdAt ?? "") ?? ""
+        let time = DateUtil.getTime(timestamp: employeeViewModel.createdAt ?? "") ?? ""
+                                    
+        messageLabel.text = "Congratulations you have successfully updated personal details and additional details for \(employeeViewModel.fullName ?? "") on \(date) at \(time)"
     }
     
     
     //MARK: - Action
     @IBAction func doneButtonTapped(_ sender: UIButton) {
-        
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: EmployeeViewController.self) {
+                self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
+        }
     }
 }

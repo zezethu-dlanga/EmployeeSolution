@@ -10,13 +10,15 @@ import UIKit
 class LoginViewController: UIViewController {
 
     //MARK: - Variables
-    private var loginViewModel = LoginViewModel()
-    private let userDefault = UserDefault.sharedInstance
-    private let emailTextField = BindingTextField()
-    private let passwordTextField = BindingTextField()
-    
+    private var loginAuthViewModel = LoginAuthViewModel()
     
     //MARK: - Outlets
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     
@@ -24,69 +26,22 @@ class LoginViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        userDefault.defaultEmail()
-        userDefault.defaultPass()
-        //Function for constructing user interface
-        setupUI()
     }
-
-    //MARK: - Setup UI
-    private func setupUI() {
-        
-        //Creating emal text field
-        emailTextField.placeholder = "Enter email"
-        emailTextField.borderStyle = .line
-        emailTextField.bind { [weak self] text in
-            if Validation.isValidEmailAddress(text) {
-                self?.loginButton.titleLabel?.textColor = UIColor.black
-            } else {
-                self?.loginButton.titleLabel?.textColor = UIColor.lightGray
-            }
-            //self?.loginButton.isEnabled = Validation.isValidEmailAddress(text)
-            self?.loginViewModel.email = text
-        }
-        
-        //Creating password text field
-        passwordTextField.isSecureTextEntry = true
-        passwordTextField.placeholder = "Enter password"
-        passwordTextField.borderStyle = .line
-        passwordTextField.layer.borderColor = UIColor.blue.cgColor
-        passwordTextField.bind { [weak self] text in
-            self?.loginViewModel.password = text
-        }
-        
-        //Control to add elements on the screen
-        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, messageLabel, loginButton])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        stackView.distribution = .fillEqually
-        self.view.addSubview(stackView)
-        
-        //Contrainst to insure the stackView displays on the screen
-        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        stackView.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        
-    }
+    
     
     //MARK: - Action
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        
-        if userDefault.getEmail() == loginViewModel.email?.lowercased() && userDefault.getPass() == loginViewModel.password {
-            Webservice().load(resource: LoginRequestModel.create(viewModel: self.loginViewModel)) { result in
-                switch result {
-                    case .success(let login):
-                        if let login = login {
-                            self.userDefault.saveToken(value: login.token)
-                            self.performSegue(withIdentifier: "toEmployeeSegue", sender: self)
-                        }
-                    case .failure(let error):
-                        print(error)                }
+        self.showSpinner(onView: self.view)
+
+        loginAuthViewModel.login(email: emailTextField.text, password: passwordTextField.text) { result in
+            if result {
+                self.removeSpinner()
+                self.performSegue(withIdentifier: "toEmployeeSegue", sender: self)
+
+            } else {
+                self.removeSpinner()
+                self.messageLabel.text = "Login details are incorrect, please try again."
             }
-        } else {
-            messageLabel.text = "Details you have entered are incorrect, please try again."
         }
     }
 }

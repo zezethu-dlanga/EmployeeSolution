@@ -62,9 +62,18 @@ class EmployeeListViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+            if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
+                    if indexPath == lastVisibleIndexPath {
+                        self.removeTableViewSpinner()
+                    }
+            }
+    }
+    
     
     //MARK: - Helper methods
     private func populateEmployees() {
+        self.showTableViewpinner(onView: self.view)
         guard let url = URL(string: "https://reqres.in/api/users?page=1&per_page=12") else {
             fatalError("URL was incorrect")
         }
@@ -74,9 +83,11 @@ class EmployeeListViewController: UITableViewController {
         Webservice().load(resource: resource) { [weak self] result in
             switch result {
                 case .success(let employees):
+                    
                     self?.employeeListViewModel.employeeListViewModel = employees.data.map(EmployeeDataViewModel.init)
                     self?.tableView.reloadData()
                 case .failure(let error):
+                    self?.removeSpinner()
                     print(error)
             }
         }

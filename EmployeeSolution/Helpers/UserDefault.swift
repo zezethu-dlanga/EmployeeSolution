@@ -15,7 +15,7 @@ class UserDefault {
     private let pass = "pass"
     
     func saveToken(value: String) {
-        userDefault.set(value.fastestEncoding.rawValue, forKey: token)
+        userDefault.set(value, forKey: token)
     }
     
     func getToken() -> String? {

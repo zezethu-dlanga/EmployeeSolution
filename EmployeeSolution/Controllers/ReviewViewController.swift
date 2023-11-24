@@ -11,6 +11,7 @@ import UIKit
 class ReviewViewController: UIViewController {
     
     //MARK: - Variables
+    var reviewViewModel = ReviewViewModel()
     var employeeViewModel = EmployeeViewModel()
     private let userDefault = UserDefault.sharedInstance
     
@@ -49,18 +50,16 @@ class ReviewViewController: UIViewController {
     
     //MARK: - Action
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        employeeViewModel.userLoginToken = userDefault.getToken()
-        
-        Webservice().load(resource: EmployeeRequestModel.create(viewModel: self.employeeViewModel)) { result in
-            switch result {
-                case .success(let response):
-                    if let response = response {
-                        self.userDefault.saveToken(value: response.userLoginToken)
-                        self.employeeViewModel.createdAt = response.createdAt
-                        self.performSegue(withIdentifier: "toSuccessful", sender: self)
-                    }
-                case .failure(let error):
-                    print(error)
+        self.employeeViewModel.userLoginToken = userDefault.getToken()
+        self.showSpinner(onView: self.view)
+        reviewViewModel.updateEmployeeDetails(employeeViewModel: self.employeeViewModel) { result, vm in
+            if result {
+                self.removeSpinner()
+                self.employeeViewModel = vm
+                self.performSegue(withIdentifier: "toSuccessful", sender: self)
+            } else {
+                self.removeSpinner()
+                fatalError("Opps something went wrong")
             }
         }
     }
