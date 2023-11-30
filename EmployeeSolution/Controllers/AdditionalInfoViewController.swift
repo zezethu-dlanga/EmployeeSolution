@@ -24,7 +24,6 @@ class AdditionalInfoViewController: UIViewController, ColorDelegate {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: true)
         additionalDataModel.gender = genderUISegmentedControl.titleForSegment(at: 0)
     }
     
