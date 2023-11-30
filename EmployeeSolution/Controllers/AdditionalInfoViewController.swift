@@ -11,10 +11,11 @@ import UIKit
 class AdditionalInfoViewController: UIViewController, ColorDelegate {
   
     //MARK: - Variables
-    var employeeViewModel = EmployeeViewModel()
+    var additionalDataModel = AdditionalDataModel()
     
     
     //MARK: - Outlets
+    @IBOutlet weak var genderUISegmentedControl: UISegmentedControl!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var colorNameLabel: UILabel!
     @IBOutlet weak var colorCodeView: UIView!
@@ -24,12 +25,13 @@ class AdditionalInfoViewController: UIViewController, ColorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
+        additionalDataModel.gender = genderUISegmentedControl.titleForSegment(at: 0)
     }
     
-    func selectedColor(viewModel: EmployeeViewModel) {
-        employeeViewModel = viewModel
-        colorNameLabel?.text = employeeViewModel.colorName
-        colorCodeView.backgroundColor = UIColor(hex: employeeViewModel.colorCode ?? "")
+    func selectedColor(viewModel: AdditionalDataModel) {
+        additionalDataModel = viewModel
+        colorNameLabel?.text = additionalDataModel.colorName
+        colorCodeView.backgroundColor = UIColor(hex: additionalDataModel.colorCode ?? "")
     }
     
     
@@ -46,22 +48,33 @@ class AdditionalInfoViewController: UIViewController, ColorDelegate {
         
         switch sender.selectedSegmentIndex {
         case 0:
-            employeeViewModel.gender = sender.titleForSegment(at: 0)
+            additionalDataModel.gender = sender.titleForSegment(at: 0)
         case 1:
-            employeeViewModel.gender = sender.titleForSegment(at: 1)
+            additionalDataModel.gender = sender.titleForSegment(at: 1)
         case 2:
-            employeeViewModel.gender = sender.titleForSegment(at: 2)
+            additionalDataModel.gender = sender.titleForSegment(at: 2)
         default:
             break;
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        employeeViewModel.residentialAddress = addressTextField.text
+        additionalDataModel.residentialAddress = addressTextField.text
         
         if segue.identifier == "toReview" {
             if let reviewVC = segue.destination as? ReviewViewController {
-                reviewVC.employeeViewModel = employeeViewModel
+                reviewVC.reviewDataModel.id = additionalDataModel.id
+                reviewVC.reviewDataModel.email = additionalDataModel.email
+                reviewVC.reviewDataModel.firstName = additionalDataModel.firstName
+                reviewVC.reviewDataModel.lastName = additionalDataModel.lastName
+                reviewVC.reviewDataModel.fullName = additionalDataModel.fullName
+                reviewVC.reviewDataModel.avatar = additionalDataModel.avatar
+                reviewVC.reviewDataModel.dOB = additionalDataModel.dOB
+                reviewVC.reviewDataModel.gender = additionalDataModel.gender
+                reviewVC.reviewDataModel.placeOfBirth = additionalDataModel.placeOfBirth
+                reviewVC.reviewDataModel.colorName = additionalDataModel.colorName
+                reviewVC.reviewDataModel.colorCode = additionalDataModel.colorCode
+                reviewVC.reviewDataModel.residentialAddress = additionalDataModel.residentialAddress
             }
         } else {
             guard let nav = segue.destination as? UINavigationController else {
@@ -71,7 +84,7 @@ class AdditionalInfoViewController: UIViewController, ColorDelegate {
             guard let colorListVC = nav.viewControllers.first as? ColorListViewController else {
                 fatalError("ColorListViewController not fount")
             }
-            colorListVC.employeeViewModel = employeeViewModel
+            colorListVC.additionalDataModel = additionalDataModel
             colorListVC.delegate = self
         }
     }

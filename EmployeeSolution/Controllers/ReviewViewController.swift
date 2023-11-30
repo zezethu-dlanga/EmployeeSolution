@@ -12,7 +12,7 @@ class ReviewViewController: UIViewController {
     
     //MARK: - Variables
     var reviewViewModel = ReviewViewModel()
-    var employeeViewModel = EmployeeViewModel()
+    var reviewDataModel = ReviewDataModel()
     private let userDefault = UserDefault.sharedInstance
     
     
@@ -37,25 +37,25 @@ class ReviewViewController: UIViewController {
     
     //MARK: - Setup UI
     private func setupUI() {
-        avatarImageView.image = UIImage(url: URL(string: employeeViewModel.avatar ?? ""))
-        fullNameLabel.text = employeeViewModel.fullName
-        emailLabel.text = employeeViewModel.email ?? ""
-        dateOfBirthLabel?.text = employeeViewModel.dOB
-        genderLabel?.text = employeeViewModel.gender
-        colorNameLabel?.text = employeeViewModel.colorName
-        placeOfBirthLabel?.text = employeeViewModel.placeOfBirth
-        addressLabel?.text = employeeViewModel.residentialAddress
+        avatarImageView.image = UIImage(url: URL(string: reviewDataModel.avatar ?? ""))
+        fullNameLabel.text = reviewDataModel.fullName
+        emailLabel.text = reviewDataModel.email ?? ""
+        dateOfBirthLabel?.text = reviewDataModel.dOB
+        genderLabel?.text = reviewDataModel.gender
+        colorNameLabel?.text = reviewDataModel.colorName
+        placeOfBirthLabel?.text = reviewDataModel.placeOfBirth
+        addressLabel?.text = reviewDataModel.residentialAddress
     }
     
     
     //MARK: - Action
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        self.employeeViewModel.userLoginToken = userDefault.getToken()
+        self.reviewDataModel.userLoginToken = userDefault.getToken()
         self.showSpinner(onView: self.view)
-        reviewViewModel.updateEmployeeDetails(employeeViewModel: self.employeeViewModel) { result, vm in
+        reviewViewModel.updateEmployeeDetails(reviewDataModel: self.reviewDataModel) { result, vm in
             if result {
                 self.removeSpinner()
-                self.employeeViewModel = vm
+                self.reviewDataModel = vm
                 self.performSegue(withIdentifier: "toSuccessful", sender: self)
             } else {
                 self.removeSpinner()
@@ -66,7 +66,8 @@ class ReviewViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let successVC = segue.destination as? SuccessfulViewController {
-            successVC.employeeViewModel = employeeViewModel
+            successVC.successfulDataModel.fullName = reviewDataModel.fullName
+            successVC.successfulDataModel.createdAt = reviewDataModel.createdAt
         }
     }
 }

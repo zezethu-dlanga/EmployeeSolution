@@ -9,14 +9,14 @@ import Foundation
 import UIKit
 
 protocol EmployeeDelegate {
-    func selectedEmployee(viewModel: EmployeeViewModel)
+    func selectedEmployee(viewModel: EmployeeDataModel)
 }
 
 class EmployeeListViewController: UITableViewController {
     
     //MARK: - Variables
     var employeeListViewModel = EmployeeListViewModel()
-    var employeeViewModel = EmployeeViewModel()
+    var employeeDataModel = EmployeeDataModel()
     var delegate: EmployeeDelegate?
     
     
@@ -52,13 +52,13 @@ class EmployeeListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedEmployee = employeeListViewModel.employeeDataViewModel(at: indexPath.row)
-        employeeViewModel.id = selectedEmployee.id
-        employeeViewModel.firstName = selectedEmployee.firstName
-        employeeViewModel.lastName = selectedEmployee.lastName
-        employeeViewModel.fullName = selectedEmployee.fullName
-        employeeViewModel.email = selectedEmployee.email
-        employeeViewModel.avatar = selectedEmployee.avatar
-        self.delegate?.selectedEmployee(viewModel: employeeViewModel)
+        employeeDataModel.id = selectedEmployee.id
+        employeeDataModel.firstName = selectedEmployee.firstName
+        employeeDataModel.lastName = selectedEmployee.lastName
+        employeeDataModel.fullName = selectedEmployee.fullName
+        employeeDataModel.email = selectedEmployee.email
+        employeeDataModel.avatar = selectedEmployee.avatar
+        self.delegate?.selectedEmployee(viewModel: employeeDataModel)
         self.dismiss(animated: true, completion: nil)
     }
     

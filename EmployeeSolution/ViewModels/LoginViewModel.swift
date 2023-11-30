@@ -8,13 +8,13 @@
 import Foundation
 
 
-struct LoginViewModel {
+struct LoginDataModel {
     var email: String?
     var password: String?
 }
 
-class LoginAuthViewModel {
-    private var loginViewModel = LoginViewModel()
+class LoginViewModel {
+    private var loginDataModel = LoginDataModel()
     private let userDefault = UserDefault.sharedInstance
     
     init() {
@@ -23,10 +23,10 @@ class LoginAuthViewModel {
     }
     
     func loginAuth(email: String?, password: String?) -> Bool{
-        loginViewModel.email = email
-        loginViewModel.password = password
+        loginDataModel.email = email
+        loginDataModel.password = password
         
-        if userDefault.getEmail() == loginViewModel.email && userDefault.getPass() == loginViewModel.password {
+        if userDefault.getEmail() == loginDataModel.email && userDefault.getPass() == loginDataModel.password {
             return true
         } else {
             return false
@@ -35,7 +35,7 @@ class LoginAuthViewModel {
     
     func login(email: String?, password: String?, completion: @escaping (Bool) -> ()) {
         if loginAuth(email: email, password: password) {
-            Webservice().load(resource: LoginRequestModel.create(viewModel: self.loginViewModel)) { result in
+            Webservice().load(resource: LoginRequestModel.create(viewModel: self.loginDataModel)) { result in
                 switch result {
                     case .success(let login):
                         if let login = login {

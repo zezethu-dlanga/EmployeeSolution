@@ -11,7 +11,7 @@ import UIKit
 class SuccessfulViewController: UIViewController {
     
     //MARK: - Variables
-    var employeeViewModel = EmployeeViewModel()
+    var successfulDataModel = SuccessfulDataModel()
     
     
     //MARK: - Outlets
@@ -22,10 +22,10 @@ class SuccessfulViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-        let date = DateUtil.getDate(timestamp: employeeViewModel.createdAt ?? "") ?? ""
-        let time = DateUtil.getTime(timestamp: employeeViewModel.createdAt ?? "") ?? ""
+        let date = DateUtil.getDate(timestamp: successfulDataModel.createdAt ?? "") ?? ""
+        let time = DateUtil.getTime(timestamp: successfulDataModel.createdAt ?? "") ?? ""
                                     
-        messageLabel.text = "Congratulations you have successfully updated personal details and additional details for \(employeeViewModel.fullName ?? "") on \(date) at \(time)"
+        messageLabel.text = "Congratulations you have successfully updated personal details and additional details for \(successfulDataModel.fullName ?? "") on \(date) at \(time)"
     }
     
     

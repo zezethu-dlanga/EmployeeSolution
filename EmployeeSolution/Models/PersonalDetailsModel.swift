@@ -18,7 +18,7 @@ struct PersonalDetailsModel: Codable {
 }
 
 extension PersonalDetailsModel {
-    init?(_ viewModel: EmployeeViewModel) {
+    init?(_ viewModel: ReviewDataModel) {
         guard let userLoginToken = viewModel.userLoginToken else {
         return nil
     }

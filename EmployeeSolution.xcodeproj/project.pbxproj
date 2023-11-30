@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E14373572B185B14004B5828 /* AdditionalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14373562B185B14004B5828 /* AdditionalInfoViewModel.swift */; };
+		E14373592B185B42004B5828 /* SuccessfulViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14373582B185B42004B5828 /* SuccessfulViewModel.swift */; };
 		E144A3572B0D5FE5001BF181 /* AdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A3562B0D5FE4001BF181 /* AdditionalInfoViewController.swift */; };
 		E144A35D2B0D87F0001BF181 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A35C2B0D87F0001BF181 /* ReviewViewController.swift */; };
 		E144A35F2B0D8914001BF181 /* SuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E144A35E2B0D8914001BF181 /* SuccessfulViewController.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E14373562B185B14004B5828 /* AdditionalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewModel.swift; sourceTree = "<group>"; };
+		E14373582B185B42004B5828 /* SuccessfulViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulViewModel.swift; sourceTree = "<group>"; };
 		E144A3562B0D5FE4001BF181 /* AdditionalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewController.swift; sourceTree = "<group>"; };
 		E144A35C2B0D87F0001BF181 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		E144A35E2B0D8914001BF181 /* SuccessfulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				E1C9B4912B0C83B0002564C2 /* EmployeeListViewModel.swift */,
 				E1C9B4932B0C83D2002564C2 /* ColorListViewModel.swift */,
 				E1858CA72B1025FA00E1937A /* ReviewViewModel.swift */,
+				E14373562B185B14004B5828 /* AdditionalInfoViewModel.swift */,
+				E14373582B185B42004B5828 /* SuccessfulViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 				E1C9B4822B0C7FD2002564C2 /* LoginResponseModel.swift in Sources */,
 				E1AE7C532B0B814500A36B37 /* BindingTextField.swift in Sources */,
 				E1858C932B0F15C300E1937A /* UserDefault.swift in Sources */,
+				E14373572B185B14004B5828 /* AdditionalInfoViewModel.swift in Sources */,
 				E1C9B48C2B0C8317002564C2 /* EmployeeListViewController.swift in Sources */,
 				E1C9B4B42B0CF0D0002564C2 /* UIImage.swift in Sources */,
 				E1858CAA2B103A0100E1937A /* UIViewController.swift in Sources */,
@@ -420,6 +427,7 @@
 				E1C9B4862B0C81B9002564C2 /* EmployeeListResponseModel.swift in Sources */,
 				E1C9B4B62B0CF37C002564C2 /* UIColor.swift in Sources */,
 				E1C9B4B82B0D2643002564C2 /* UIView.swift in Sources */,
+				E14373592B185B42004B5828 /* SuccessfulViewModel.swift in Sources */,
 				E1C9B48A2B0C82FB002564C2 /* EmployeeViewController.swift in Sources */,
 				E1858CAC2B103F0000E1937A /* UITableViewController.swift in Sources */,
 				E144A35F2B0D8914001BF181 /* SuccessfulViewController.swift in Sources */,

@@ -14,7 +14,7 @@ struct AdditionalInformationModel: Codable {
 }
 
 extension AdditionalInformationModel {
-    init?(_ viewModel: EmployeeViewModel) {
+    init?(_ viewModel: ReviewDataModel) {
         guard let userLoginToken = viewModel.userLoginToken else {
         return nil
     }

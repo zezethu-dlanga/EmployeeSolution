@@ -14,7 +14,7 @@ struct LoginRequestModel: Codable {
 
 extension LoginRequestModel {
     
-    init?(_ viewModel: LoginViewModel) {
+    init?(_ viewModel: LoginDataModel) {
         guard let email = viewModel.email,
         let password = viewModel.password else {
         return nil
@@ -23,7 +23,7 @@ extension LoginRequestModel {
         self.password = password
     }
     
-    static func create(viewModel: LoginViewModel) -> Resource<LoginResponseModel?> {
+    static func create(viewModel: LoginDataModel) -> Resource<LoginResponseModel?> {
         let login = LoginRequestModel(viewModel)
         
         guard let url = URL(string: Path.login.rawValue) else {

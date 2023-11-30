@@ -7,9 +7,7 @@
 
 import Foundation
 
-struct EmployeeViewModel {
-    var userLoginToken: String?
-    
+struct EmployeeDataModel {
     var id : Int?
     var email: String?
     var firstName: String?
@@ -17,12 +15,5 @@ struct EmployeeViewModel {
     var fullName: String?
     var avatar: String?
     var dOB: String?
-    var gender: String?
-    
     var placeOfBirth: String?
-    var colorName: String?
-    var colorCode: String?
-    var residentialAddress: String?
-    
-    var createdAt: String?
 }

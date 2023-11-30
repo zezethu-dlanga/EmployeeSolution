@@ -10,7 +10,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     //MARK: - Variables
-    private var loginAuthViewModel = LoginAuthViewModel()
+    private var loginViewModel = LoginViewModel()
     
     //MARK: - Outlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         self.showSpinner(onView: self.view)
 
-        loginAuthViewModel.login(email: emailTextField.text, password: passwordTextField.text) { result in
+        loginViewModel.login(email: emailTextField.text, password: passwordTextField.text) { result in
             if result {
                 self.removeSpinner()
                 self.performSegue(withIdentifier: "toEmployeeSegue", sender: self)

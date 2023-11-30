@@ -10,14 +10,14 @@ import UIKit
 
 
 protocol ColorDelegate {
-    func selectedColor(viewModel: EmployeeViewModel)
+    func selectedColor(viewModel: AdditionalDataModel)
 }
 
 class ColorListViewController: UITableViewController {
     
     //MARK: - Variables
     var colorListViewModel = ColorListViewModel()
-    var employeeViewModel = EmployeeViewModel()
+    var additionalDataModel = AdditionalDataModel()
     var delegate: ColorDelegate?
     
     
@@ -53,9 +53,9 @@ class ColorListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedColor = colorListViewModel.colorDataViewModel(at: indexPath.row)
-        employeeViewModel.colorName = selectedColor.colorName
-        employeeViewModel.colorCode = selectedColor.colorCode
-        self.delegate?.selectedColor(viewModel: employeeViewModel)
+        additionalDataModel.colorName = selectedColor.colorName
+        additionalDataModel.colorCode = selectedColor.colorCode
+        self.delegate?.selectedColor(viewModel: additionalDataModel)
         self.dismiss(animated: true, completion: nil)
     }
     

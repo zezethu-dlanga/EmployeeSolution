@@ -13,10 +13,9 @@ struct EmployeeRequestModel: Codable {
     let additionalInformation: AdditionalInformationModel
 }
 
-
 extension EmployeeRequestModel {
     
-    init?(_ viewModel: EmployeeViewModel) {
+    init?(_ viewModel: ReviewDataModel) {
         guard let userLoginToken = viewModel.userLoginToken else {
         return nil
     }
@@ -25,7 +24,7 @@ extension EmployeeRequestModel {
         self.additionalInformation = AdditionalInformationModel.init(placeOfBirth: viewModel.placeOfBirth ?? "", preferredColor: viewModel.colorName ?? "", residentialAddress: viewModel.residentialAddress ?? "")
     }
     
-    static func create(viewModel: EmployeeViewModel) -> Resource<EmployeeResponseModel?> {
+    static func create(viewModel: ReviewDataModel) -> Resource<EmployeeResponseModel?> {
         let employee = EmployeeRequestModel(viewModel)
         
         guard let url = URL(string: Path.updateEmployee.rawValue) else {

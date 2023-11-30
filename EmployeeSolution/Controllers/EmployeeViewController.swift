@@ -11,7 +11,7 @@ import UIKit
 class EmployeeViewController: UIViewController, EmployeeDelegate {
     
     //MARK: - Variables
-    var employeeViewModel = EmployeeViewModel()
+    var employeeDataModel = EmployeeDataModel()
     private var datePicker = UIDatePicker()
     
     
@@ -35,11 +35,11 @@ class EmployeeViewController: UIViewController, EmployeeDelegate {
         dateOfBirthTextField.addTarget(self, action: #selector(displayPicker), for: .touchDown)
     }
     
-    func selectedEmployee(viewModel: EmployeeViewModel) {
-        employeeViewModel = viewModel
-        emailLabel.text = employeeViewModel.email ?? ""
-        fullNameLabel.text = employeeViewModel.fullName
-        avatarImageView.image = UIImage(url: URL(string: employeeViewModel.avatar ?? ""))
+    func selectedEmployee(viewModel: EmployeeDataModel) {
+        employeeDataModel = viewModel
+        emailLabel.text = employeeDataModel.email ?? ""
+        fullNameLabel.text = employeeDataModel.fullName
+        avatarImageView.image = UIImage(url: URL(string: employeeDataModel.avatar ?? ""))
     }
     
     
@@ -80,12 +80,19 @@ class EmployeeViewController: UIViewController, EmployeeDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        employeeViewModel.dOB = dateOfBirthTextField.text
-        employeeViewModel.placeOfBirth = placeOfBirthTextField.text
-        
+        employeeDataModel.dOB = dateOfBirthTextField.text
+        employeeDataModel.placeOfBirth = placeOfBirthTextField.text
+
         if segue.identifier == "toAdditionalInfo" {
             if let additionalInfoVC = segue.destination as? AdditionalInfoViewController {
-                additionalInfoVC.employeeViewModel = employeeViewModel
+                additionalInfoVC.additionalDataModel.id = employeeDataModel.id
+                additionalInfoVC.additionalDataModel.email = employeeDataModel.email
+                additionalInfoVC.additionalDataModel.firstName = employeeDataModel.firstName
+                additionalInfoVC.additionalDataModel.lastName = employeeDataModel.lastName
+                additionalInfoVC.additionalDataModel.fullName = employeeDataModel.fullName
+                additionalInfoVC.additionalDataModel.avatar = employeeDataModel.avatar
+                additionalInfoVC.additionalDataModel.dOB = employeeDataModel.dOB
+                additionalInfoVC.additionalDataModel.placeOfBirth = employeeDataModel.placeOfBirth
             }
         } else {
             guard let nav = segue.destination as? UINavigationController else {
@@ -95,7 +102,7 @@ class EmployeeViewController: UIViewController, EmployeeDelegate {
             guard let employeeListVC = nav.viewControllers.first as? EmployeeListViewController else {
                 fatalError("EmployeeListViewController not fount")
             }
-            employeeListVC.employeeViewModel = employeeViewModel
+            employeeListVC.employeeDataModel = employeeDataModel
             employeeListVC.delegate = self
         }
     }
