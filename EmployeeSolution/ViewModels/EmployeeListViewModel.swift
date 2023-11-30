@@ -17,6 +17,24 @@ class EmployeeListViewModel {
     func employeeDataViewModel(at index: Int) -> EmployeeDataViewModel {
         return self.employeeListViewModel[index]
     }
+    
+    func getEmployeeList(completion: @escaping (Bool) -> ()) {
+        guard let url = URL(string: Path.getEmployeeList.rawValue) else {
+            fatalError("URL was incorrect")
+        }
+        
+        let resource = Resource<EmployeeListResponseModel>(url: url)
+        Webservice().load(resource: resource) { [weak self] result in
+            switch result {
+                case .success(let employees):
+                    self?.employeeListViewModel = employees.data.map(EmployeeDataViewModel.init)
+                    completion(true)
+                case .failure(let error):
+                    print(error)
+                    completion(false)
+            }
+        }
+    }
 }
 
 struct EmployeeDataViewModel {

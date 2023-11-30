@@ -24,7 +24,6 @@ class ColorListViewController: UITableViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         populateColors()
     }
     
@@ -60,32 +59,24 @@ class ColorListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
-                    if indexPath == lastVisibleIndexPath {
-                        self.removeTableViewSpinner()
-                    }
+        if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
+            if indexPath == lastVisibleIndexPath {
+                self.removeTableViewSpinner()
             }
+        }
     }
     
     
     //MARK: - Helper methods
     private func populateColors() {
         self.showTableViewpinner(onView: self.view)
-        guard let url = URL(string: Path.getCodeList.rawValue) else {
-            fatalError("URL was incorrect")
-        }
         
-        let resource = Resource<ColorListResponseModel>(url: url)
-        
-        Webservice().load(resource: resource) { [weak self] result in
-            switch result {
-                case .success(let colors):
-                    self?.removeSpinner()
-                    self?.colorListViewModel.colorListViewModel = colors.data.map(ColorDataViewModel.init)
-                    self?.tableView.reloadData()
-                case .failure(let error):
-                    self?.removeSpinner()
-                    print(error)
+        self.colorListViewModel.getColorList() { result in
+            if result {
+                self.removeSpinner()
+                self.tableView.reloadData()
+            } else {
+                self.removeSpinner()
             }
         }
     }
