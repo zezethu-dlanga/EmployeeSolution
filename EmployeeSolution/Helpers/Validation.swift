@@ -25,4 +25,33 @@ class Validation {
             return false
         }
     }
+    
+    class func canGoToAdditionalInfoViewController(dataModel: EmployeeDataModel) -> Bool {
+        print(dataModel.placeOfBirth?.isEmpty)
+        print(dataModel.fullName?.isEmpty)
+        
+        if dataModel.id != nil &&
+            dataModel.firstName?.isEmpty == false &&
+            dataModel.lastName?.isEmpty == false &&
+            dataModel.fullName?.isEmpty == false &&
+            dataModel.email?.isEmpty == false &&
+            dataModel.dOB?.isEmpty == false &&
+            dataModel.placeOfBirth?.isEmpty == false &&
+            dataModel.avatar?.isEmpty == false {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    class func canGoToReviewViewController(dataModel: AdditionalDataModel) -> Bool {
+        if dataModel.gender?.isEmpty == false &&
+            dataModel.colorName?.isEmpty == false &&
+            dataModel.colorCode?.isEmpty == false &&
+            dataModel.residentialAddress?.isEmpty == false {
+            return true
+        } else {
+            return false
+        }
+    }
 }

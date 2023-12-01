@@ -72,7 +72,17 @@ class EmployeeViewController: UIViewController, EmployeeDelegate {
     
     //MARK: - Action
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toAdditionalInfo", sender: self)
+        employeeDataModel.dOB = dateOfBirthTextField.text
+        employeeDataModel.placeOfBirth = placeOfBirthTextField.text
+        
+        if Validation.canGoToAdditionalInfoViewController(dataModel: employeeDataModel) {
+            self.performSegue(withIdentifier: "toAdditionalInfo", sender: self)
+        } else {
+            let popup = UIAlertController(title: "", message: "Please ensure you have seleted employee, date of birth, and entered place of birth.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default)
+            popup.addAction(ok)
+            present(popup, animated: true, completion: nil)
+        }
     }
     
     @IBAction func employeeButtonTapped(_ sender: UIButton) {
@@ -106,6 +116,4 @@ class EmployeeViewController: UIViewController, EmployeeDelegate {
             employeeListVC.delegate = self
         }
     }
-    
-    @IBAction func unwind( _ seg: UIStoryboardSegue) {}
 }

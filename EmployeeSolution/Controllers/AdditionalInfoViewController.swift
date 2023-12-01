@@ -36,7 +36,15 @@ class AdditionalInfoViewController: UIViewController, ColorDelegate {
     
     //MARK: - Action
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toReview", sender: self)
+        additionalDataModel.residentialAddress = addressTextField.text
+        if Validation.canGoToReviewViewController(dataModel: additionalDataModel) {
+            self.performSegue(withIdentifier: "toReview", sender: self)
+        } else {
+            let popup = UIAlertController(title: "", message: "Please ensure you have seleted gender, preferred colour, and residential address.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default)
+            popup.addAction(ok)
+            present(popup, animated: true, completion: nil)
+        }
     }
     
     @IBAction func employeeButtonTapped(_ sender: UIButton) {
